@@ -12,6 +12,7 @@ const FULL: ViewStyle = {
 }
 const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
+
 }
 const HEADER: TextStyle = {
   paddingBottom: spacing[5] - 1,
@@ -24,6 +25,7 @@ const HEADER_TITLE: TextStyle = {
   letterSpacing: 1.5,
   lineHeight: 15,
   textAlign: "center",
+  color: color.palette.navy,
 }
 const LIST_CONTAINER: ViewStyle = {
   alignItems: "center",
@@ -37,6 +39,8 @@ const IMAGE: ImageStyle = {
 }
 const LIST_TEXT: TextStyle = {
   marginLeft: 10,
+  flex: 1,
+  color: color.palette.navy
 }
 const FLAT_LIST: ViewStyle = {
   paddingHorizontal: spacing[4],
@@ -59,7 +63,7 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "demoList">
 
     return (
       <View testID="DemoListScreen" style={FULL}>
-        <GradientBackground colors={["#422443", "#281b34"]} />
+        <GradientBackground colors={[color.palette.offWhite, color.palette.offWhite]} />
         <Screen style={CONTAINER} preset="fixed" backgroundColor={color.transparent}>
           <Header
             headerTx="demoListScreen.title"
@@ -76,7 +80,7 @@ export const DemoListScreen: FC<StackScreenProps<NavigatorParamList, "demoList">
               <View style={LIST_CONTAINER}>
                 <Image source={{ uri: item.image }} style={IMAGE} />
                 <Text style={LIST_TEXT}>
-                  {item.name} ({item.status})
+                  {item.name} ({"" + (Math.random() * 5).toFixed(2)+ " Mi. Away"})
                 </Text>
               </View>
             )}
