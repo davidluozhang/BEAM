@@ -16,7 +16,7 @@ import { TextInput } from "react-native-gesture-handler"
 import { palette } from "../../theme/palette"
 import { placeholder } from "i18n-js"
 
-const bowserLogo = require("./bowser.png")
+const logo = require("./Stronkjak.png")
 
 const FULL: ViewStyle = { flex: 1 }
 const CONTAINER: ViewStyle = {
@@ -132,7 +132,7 @@ const LOGIN_BUTTON: ViewStyle = {
   backgroundColor: color.palette.orangeDarker,
 }
 
-export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
+export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "login">> = observer(
   ({ navigation }) => {
     const nextScreen = () => navigation.navigate("demo")
     const[email, setEmail] = useState("")
@@ -147,7 +147,7 @@ export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> 
             <Text style={TITLE} text="Welcome to Beam!" />
           </Text>
           <Text style={ALMOST} text="Safety. Reimagined." />
-          <Image source={bowserLogo} style={IMAGE} />
+          <Image source={logo} style={IMAGE} />
           {/* <Text style={CONTENT}>
             A Work in Progress.
           </Text> */}

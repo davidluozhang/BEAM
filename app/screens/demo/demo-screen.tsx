@@ -15,7 +15,8 @@ import { NavigatorParamList } from "../../navigators"
 import { color, spacing } from "../../theme"
 import { Api } from "../../services/api"
 import { save } from "../../utils/storage"
-export const logoIgnite = require("./logo-ignite.png")
+import MapView, {Marker} from 'react-native-maps'
+export const tempMap = require("./TempMap.png")
 export const heart = require("./heart.png")
 
 const FULL: ViewStyle = { flex: 1 }
@@ -26,18 +27,24 @@ const CONTAINER: ViewStyle = {
 const DEMO: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
-  backgroundColor: color.palette.deepPurple,
+  backgroundColor: color.palette.lighterGrey,
+  alignSelf: "center",
+  //maxWidth: "90%",
+  width: 320,
+  marginVertical: 5,
 }
 const BOLD: TextStyle = { fontWeight: "bold" }
 const DEMO_TEXT: TextStyle = {
   ...BOLD,
   fontSize: 13,
   letterSpacing: 2,
+  color: color.palette.navy,
 }
 const HEADER: TextStyle = {
   paddingTop: spacing[3],
   paddingBottom: spacing[5] - 1,
   paddingHorizontal: 0,
+  //color: color.palette.blue,
 }
 const HEADER_TITLE: TextStyle = {
   ...BOLD,
@@ -45,25 +52,31 @@ const HEADER_TITLE: TextStyle = {
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
+  color: color.palette.black
 }
 const TITLE: TextStyle = {
   ...BOLD,
   fontSize: 28,
   lineHeight: 38,
   textAlign: "center",
-  marginBottom: spacing[5],
+  //paddingBottom: 10,
+  marginBottom: spacing[1],
+  color: color.palette.navy,
 }
 const TAGLINE: TextStyle = {
-  color: "#BAB6C8",
+  color: color.palette.navy,
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[4] + spacing[1],
 }
-const IGNITE: ImageStyle = {
-  marginVertical: spacing[6],
+const TempMap: ImageStyle = {
+  paddingTop: 10,
+  paddingBottom: 40,
+  marginTop: spacing[3],
+  marginBottom: spacing[4],
   alignSelf: "center",
-  width: 180,
-  height: 100,
+  width: 350,
+  height: 350,
 }
 const LOVE_WRAPPER: ViewStyle = {
   flexDirection: "row",
@@ -138,7 +151,7 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = obse
 
     return (
       <View testID="DemoScreen" style={FULL}>
-        <GradientBackground colors={["#422443", "#281b34"]} />
+        <GradientBackground colors={[color.palette.offWhite, color.palette.offWhite]} />
         <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
           <Header
             headerTx="demoScreen.howTo"
@@ -148,33 +161,60 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = obse
             titleStyle={HEADER_TITLE}
           />
           <Text style={TITLE} preset="header" tx="demoScreen.title" />
-          <Text style={TAGLINE} tx="demoScreen.tagLine" />
-          <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
+          {/* <Text style={TAGLINE} tx="demoScreen.tagLine" /> */}
+          {/* <BulletItem text="Integrated here, Navigation with State, TypeScript, Storybook, Solidarity, and i18n." />
           <BulletItem
             text={`To run Storybook, press ${platformCommand} or shake the device to show the developer menu, then select "Toggle Storybook"`}
+          /> */}
+          {/* <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" /> */}
+          {/* <Text style={HINT} text={"Get Matched Asap"} /> */}
+          
+          <View>
+          <MapView
+            initialRegion={{
+              latitude: 37.78825,
+              longitude: -122.4324,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421,
+            }}
           />
-          <BulletItem text="Load up Reactotron!  You can inspect your app, view the events, interact, and so much more!" />
+          </View>
+
+          <Image source={tempMap} style={TempMap} />
+
+
           <View>
             <Button
               style={DEMO}
               textStyle={DEMO_TEXT}
-              tx="demoScreen.reactotron"
-              onPress={demoReactotron}
+              text = {"BEAM Now - Get Matched ASAP"}
+              //tx="demoScreen.reactotron"
+              onPress={() => 1}
             />
-            <Text style={HINT} tx={`demoScreen.${Platform.OS}ReactotronHint` as const} />
+          </View>
+          {/* //<Text style={HINT} text={"Schedule a Walk"} /> */}
+          <View>
+            <Button
+              style={DEMO}
+              textStyle={DEMO_TEXT}
+              text = {"BEAM Later - Schedule a Walk"}
+              //tx="demoScreen.reactotron"
+              onPress={() => 1}
+            />
           </View>
           <Button
             style={DEMO}
             textStyle={DEMO_TEXT}
-            tx="demoScreen.demoList"
+            text = {"View Nearby Users"}
+            //tx="demoScreen.demoList"
             onPress={() => navigation.navigate("demoList")}
           />
-          <Image source={logoIgnite} style={IGNITE} />
+          {/* <Image source={logoIgnite} style={IGNITE} />
           <View style={LOVE_WRAPPER}>
             <Text style={LOVE} text="Made with" />
             <Image source={heart} style={HEART} />
             <Text style={LOVE} text="by Infinite Red" />
-          </View>
+          </View> */}
         </Screen>
       </View>
     )
