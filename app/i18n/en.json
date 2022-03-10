@@ -13,7 +13,7 @@
     "continue": "LOG IN"
   },
   "demoScreen": {
-    "howTo": "BEAM",
+    "howTo": "Beam",
     "title": "Walk Together",
     "tagLine": "",
     "reactotron": "Demo Reactotron",
@@ -26,6 +26,12 @@
   },
   "demoListScreen": {
     "title": "Nearby Users"
+  },
+  "beamNowScreen": {
+    "beam": "Beam",
+    "title": "Walk Together",
+    "info": "Enter your destination",
+    "queue": "Match Me"
   },
   "errorScreen": {
     "title": "Something went wrong!",

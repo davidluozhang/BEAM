@@ -1,7 +1,8 @@
-import React, { FC, useState } from "react"
-import { View, ViewStyle, TextStyle, ImageStyle, SafeAreaView, TouchableOpacity } from "react-native"
-import { StackScreenProps } from "@react-navigation/stack"
-import { observer } from "mobx-react-lite"
+/* eslint-disable max-len */
+import React, {FC, useState} from "react";
+import {View, ViewStyle, TextStyle, ImageStyle, SafeAreaView, TouchableOpacity} from "react-native";
+import {StackScreenProps} from "@react-navigation/stack";
+import {observer} from "mobx-react-lite";
 import {
   Button,
   Header,
@@ -9,30 +10,30 @@ import {
   Text,
   GradientBackground,
   AutoImage as Image,
-} from "../../components"
-import { color, spacing, typography } from "../../theme"
-import { NavigatorParamList } from "../../navigators"
-import { TextInput } from "react-native-gesture-handler"
-import { palette } from "../../theme/palette"
-import { placeholder } from "i18n-js"
+} from "../../components";
+import {color, spacing, typography} from "../../theme";
+import {NavigatorParamList} from "../../navigators";
+import {TextInput} from "react-native-gesture-handler";
+import {palette} from "../../theme/palette";
+import {placeholder} from "i18n-js";
 
-const logo = require("./Stronkjak.png")
+const logo = require("./Stronkjak.png");
 
-const FULL: ViewStyle = { flex: 1 }
+const FULL: ViewStyle = {flex: 1};
 const CONTAINER: ViewStyle = {
   backgroundColor: color.transparent,
   paddingHorizontal: spacing[4],
-}
+};
 const TEXT: TextStyle = {
   color: color.palette.black,
   fontFamily: typography.primary,
-}
-const BOLD: TextStyle = { fontWeight: "bold" }
+};
+const BOLD: TextStyle = {fontWeight: "bold"};
 const HEADER: TextStyle = {
   paddingTop: spacing[3],
   paddingBottom: spacing[4] + spacing[1],
   paddingHorizontal: 0,
-}
+};
 const HEADER_TITLE: TextStyle = {
   ...TEXT,
   ...BOLD,
@@ -40,18 +41,18 @@ const HEADER_TITLE: TextStyle = {
   lineHeight: 15,
   textAlign: "center",
   letterSpacing: 1.5,
-}
+};
 const TITLE_WRAPPER: TextStyle = {
   ...TEXT,
   textAlign: "center",
-}
+};
 const TITLE: TextStyle = {
   ...TEXT,
   ...BOLD,
   fontSize: 28,
   lineHeight: 38,
   textAlign: "center",
-}
+};
 const ALMOST: TextStyle = {
   ...TEXT,
   ...BOLD,
@@ -59,67 +60,67 @@ const ALMOST: TextStyle = {
   fontStyle: "italic",
   textAlign: "center",
 
-}
+};
 const IMAGE: ImageStyle = {
   alignSelf: "center",
   marginVertical: spacing[5],
   maxWidth: "100%",
   width: 343,
   height: 230,
-}
+};
 const CONTENT: TextStyle = {
   ...TEXT,
   color: color.palette.black,
   fontSize: 15,
   lineHeight: 22,
   marginBottom: spacing[5],
-}
+};
 const CONTINUE: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
   backgroundColor: "transparent",
-}
+};
 const CONTINUE_TEXT: TextStyle = {
   ...TEXT,
   ...BOLD,
   fontSize: 13,
   letterSpacing: 2,
-}
-const FOOTER: ViewStyle = { backgroundColor: "#20162D" }
+};
+const FOOTER: ViewStyle = {backgroundColor: "#20162D"};
 const FOOTER_CONTENT: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
-}
-const TEXT_INPUT: ViewStyle = { 
+};
+const TEXT_INPUT: ViewStyle = {
   backgroundColor: "transparent",
   borderColor: color.palette.black,
-  alignItems: "center"
-}
+  alignItems: "center",
+};
 
 const TEXT_INPUT_BOX: ViewStyle = {
   paddingVertical: spacing[4],
   paddingHorizontal: spacing[4],
   backgroundColor: color.palette.lighterGrey,
-  borderRadius: 30,
+  borderRadius: 10,
   borderColor: color.palette.black,
   width: "70%",
   height: 45,
   marginBottom: 5,
   alignItems: "center",
-}
+};
 
 const FORGOT_BUTTON: TextStyle = {
   height: 30,
   marginTop: 5,
   textAlign: "center",
-  color: color.palette.orange
-}
+  color: color.palette.orange,
+};
 
 const LOGIN: ViewStyle = {
   backgroundColor: "transparent",
   borderColor: color.palette.black,
-  alignItems: "center"
-}
+  alignItems: "center",
+};
 
 const LOGIN_BUTTON: ViewStyle = {
   width: "70%",
@@ -129,70 +130,70 @@ const LOGIN_BUTTON: ViewStyle = {
   justifyContent: "center",
   marginTop: 15,
   marginBottom: 15,
-  backgroundColor: color.palette.orangeDarker,
-}
+  // backgroundColor: color.palette.orangeDarker,
+};
 
-export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "login">> = observer(
-  ({ navigation }) => {
-    const nextScreen = () => navigation.navigate("demo")
-    const[email, setEmail] = useState("")
-    const[password, setPassword] = useState("")
+export const WelcomeScreen: FC<StackScreenProps<NavigatorParamList, "welcome">> = observer(
+    ({navigation}) => {
+      const nextScreen = () => navigation.navigate("demo");
+      const [email, setEmail] = useState("");
+      const [password, setPassword] = useState("");
 
-    return (
-      <View testID="WelcomeScreen" style={FULL}>
-        <GradientBackground colors={[color.palette.offWhite, color.palette.offWhite]} />
-        <Screen style={CONTAINER} backgroundColor={color.transparent}>
-          <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
-          <Text style={TITLE_WRAPPER}>
-            <Text style={TITLE} text="Welcome to Beam!" />
-          </Text>
-          <Text style={ALMOST} text="Safety. Reimagined." />
-          <Image source={logo} style={IMAGE} />
-          {/* <Text style={CONTENT}>
+      return (
+        <View testID="WelcomeScreen" style={FULL}>
+          <GradientBackground colors={[color.palette.offWhite, color.palette.offWhite]} />
+          <Screen style={CONTAINER} backgroundColor={color.transparent}>
+            <Header headerTx="welcomeScreen.poweredBy" style={HEADER} titleStyle={HEADER_TITLE} />
+            <Text style={TITLE_WRAPPER}>
+              <Text style={TITLE} text="Welcome to Beam!" />
+            </Text>
+            <Text style={ALMOST} text="Safety. Reimagined." />
+            <Image source={logo} style={IMAGE} />
+            {/* <Text style={CONTENT}>
             A Work in Progress.
           </Text> */}
-          {/* <Text style={CONTENT}>
+            {/* <Text style={CONTENT}>
             Ruchir Baronia, Aditya Bose, and David Zhi LuoZhang
           </Text> */}
-        </Screen>
-        <SafeAreaView style={TEXT_INPUT}>
-          <View style={TEXT_INPUT_BOX}>
-            <TextInput
-              testID="login-username"
-              placeholder= "Username"
-              placeholderTextColor={palette.black}
-              onChangeText={(email) => setEmail(email)}
-            />
-          </View>
+          </Screen>
+          <SafeAreaView style={TEXT_INPUT}>
+            <View style={TEXT_INPUT_BOX}>
+              <TextInput
+                testID="login-username"
+                placeholder= "Username"
+                placeholderTextColor={palette.black}
+                onChangeText={(email) => setEmail(email)}
+              />
+            </View>
 
-          <View style={TEXT_INPUT_BOX}>
-            <TextInput
-              testID="login-password"
-              placeholder= "Password"
-              placeholderTextColor={palette.black}
-              secureTextEntry={true}
-              textAlign={'center'}
-              onChangeText={(email) => setEmail(email)}
-            />
-          </View>
-        </SafeAreaView>
+            <View style={TEXT_INPUT_BOX}>
+              <TextInput
+                testID="login-password"
+                placeholder= "Password"
+                placeholderTextColor={palette.black}
+                secureTextEntry={true}
+                textAlign={"center"}
+                onChangeText={(password) => setPassword(password)}
+              />
+            </View>
+          </SafeAreaView>
 
-        <TouchableOpacity>
-        <Text style={FORGOT_BUTTON}>Forgot Password?</Text>
-      </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={FORGOT_BUTTON}>Forgot Password?</Text>
+          </TouchableOpacity>
 
-        <SafeAreaView style={LOGIN}>
-          <View style = {LOGIN_BUTTON}>
-          <Button
-            testID="next-screen-button"
-            style={CONTINUE}
-            textStyle={CONTINUE_TEXT}
-            tx="welcomeScreen.continue"
-            onPress={nextScreen}
-            />
-          </View>
-        </SafeAreaView>
-      </View>
-    )
-  },
-)
+          <SafeAreaView style={LOGIN}>
+            <View style = {LOGIN_BUTTON}>
+              <Button
+                testID="next-screen-button"
+                style={CONTINUE}
+                textStyle={CONTINUE_TEXT}
+                tx="welcomeScreen.continue"
+                onPress={nextScreen}
+              />
+            </View>
+          </SafeAreaView>
+        </View>
+      );
+    },
+);

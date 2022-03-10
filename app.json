@@ -19,7 +19,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBEMQ2CRsZtYidTs8fy3xK75YifcI6XFkA"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
