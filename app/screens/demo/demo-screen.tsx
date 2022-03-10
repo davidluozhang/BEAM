@@ -20,87 +20,87 @@ import MapView, {PROVIDER_GOOGLE} from "react-native-maps";
 export const tempMap = require("./TempMap.png");
 export const heart = require("./heart.png");
 
-const FULL: ViewStyle = {flex: 1};
-const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
-  paddingHorizontal: spacing[4],
-};
-const DEMO: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-  backgroundColor: color.palette.lighterGrey,
-  alignSelf: "center",
-  // maxWidth: "90%",
-  width: 320,
-  marginVertical: 5,
-};
-const BOLD: TextStyle = {fontWeight: "bold"};
-const DEMO_TEXT: TextStyle = {
-  ...BOLD,
-  fontSize: 13,
-  letterSpacing: 2,
-  color: color.palette.blue,
-};
-const HEADER: TextStyle = {
-  paddingTop: spacing[3],
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: 0,
-  color: color.palette.blue,
-};
-const HEADER_TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 12,
-  lineHeight: 15,
-  textAlign: "center",
-  letterSpacing: 1.5,
-  color: color.palette.black,
-};
-const TITLE: TextStyle = {
-  ...BOLD,
-  fontSize: 28,
-  lineHeight: 38,
-  textAlign: "center",
-  // paddingBottom: 10,
-  marginBottom: spacing[1],
-  color: color.palette.blue,
-};
-const TAGLINE: TextStyle = {
-  color: color.palette.blue,
-  fontSize: 15,
-  lineHeight: 22,
-  marginBottom: spacing[4] + spacing[1],
-};
-const TempMap: ImageStyle = {
-  paddingTop: 10,
-  paddingBottom: 40,
-  marginTop: spacing[3],
-  marginBottom: spacing[4],
-  alignSelf: "center",
-  width: 350,
-  height: 350,
-};
-const LOVE_WRAPPER: ViewStyle = {
-  flexDirection: "row",
-  alignItems: "center",
-  alignSelf: "center",
-};
-const LOVE: TextStyle = {
-  color: "#BAB6C8",
-  fontSize: 15,
-  lineHeight: 22,
-};
-const HEART: ImageStyle = {
-  marginHorizontal: spacing[2],
-  width: 10,
-  height: 10,
-  resizeMode: "contain",
-};
-const HINT: TextStyle = {
-  color: "#BAB6C8",
-  fontSize: 12,
-  lineHeight: 15,
-  marginVertical: spacing[2],
-};
+// const FULL: ViewStyle = {flex: 1};
+// const CONTAINER: ViewStyle = {
+//   backgroundColor: color.transparent,
+//   paddingHorizontal: spacing[4],
+// };
+// const DEMO: ViewStyle = {
+//   paddingVertical: spacing[4],
+//   paddingHorizontal: spacing[4],
+//   backgroundColor: color.palette.lighterGrey,
+//   alignSelf: "center",
+//   // maxWidth: "90%",
+//   width: 320,
+//   marginVertical: 5,
+// };
+// const BOLD: TextStyle = {fontWeight: "bold"};
+// const DEMO_TEXT: TextStyle = {
+//   ...BOLD,
+//   fontSize: 13,
+//   letterSpacing: 2,
+//   color: color.palette.blue,
+// };
+// const HEADER: TextStyle = {
+//   paddingTop: spacing[3],
+//   paddingBottom: spacing[5] - 1,
+//   paddingHorizontal: 0,
+//   color: color.palette.blue,
+// };
+// const HEADER_TITLE: TextStyle = {
+//   ...BOLD,
+//   fontSize: 12,
+//   lineHeight: 15,
+//   textAlign: "center",
+//   letterSpacing: 1.5,
+//   color: color.palette.black,
+// };
+// const TITLE: TextStyle = {
+//   ...BOLD,
+//   fontSize: 28,
+//   lineHeight: 38,
+//   textAlign: "center",
+//   // paddingBottom: 10,
+//   marginBottom: spacing[1],
+//   color: color.palette.blue,
+// };
+// const TAGLINE: TextStyle = {
+//   color: color.palette.blue,
+//   fontSize: 15,
+//   lineHeight: 22,
+//   marginBottom: spacing[4] + spacing[1],
+// };
+// const TempMap: ImageStyle = {
+//   paddingTop: 10,
+//   paddingBottom: 40,
+//   marginTop: spacing[3],
+//   marginBottom: spacing[4],
+//   alignSelf: "center",
+//   width: 350,
+//   height: 350,
+// };
+// const LOVE_WRAPPER: ViewStyle = {
+//   flexDirection: "row",
+//   alignItems: "center",
+//   alignSelf: "center",
+// };
+// const LOVE: TextStyle = {
+//   color: "#BAB6C8",
+//   fontSize: 15,
+//   lineHeight: 22,
+// };
+// const HEART: ImageStyle = {
+//   marginHorizontal: spacing[2],
+//   width: 10,
+//   height: 10,
+//   resizeMode: "contain",
+// };
+// const HINT: TextStyle = {
+//   color: "#BAB6C8",
+//   fontSize: 12,
+//   lineHeight: 15,
+//   marginVertical: spacing[2],
+// };
 
 const platformCommand = Platform.select({
   ios: "Cmd + D",
@@ -118,6 +118,44 @@ const styles = StyleSheet.create({
     height: 320,
     borderRadius: 10,
   },
+  full: {
+    flex: 1,
+  },
+  container: {
+    backgroundColor: color.transparent,
+    paddingHorizontal: spacing[4],
+  },
+  demo: {
+    paddingVertical: spacing[4],
+    paddingHorizontal: spacing[4],
+    backgroundColor: color.palette.lighterGrey,
+    alignSelf: "center",
+    // maxWidth: "90%",
+    width: 320,
+    marginVertical: 5,
+  },
+  demoText: {
+    fontWeight: "bold",
+    fontSize: 13,
+    letterSpacing: 2,
+    color: color.palette.blue,
+  },
+  header: {
+    paddingTop: spacing[3],
+    paddingBottom: spacing[5] - 1,
+    paddingHorizontal: 0,
+    color: color.palette.blue,
+  },
+  headerTitle: {
+    fontWeight: "bold",
+    fontSize: 12,
+    lineHeight: 15,
+    textAlign: "center",
+    letterSpacing: 1.5,
+    color: color.palette.black,
+  },
+
+
 });
 
 export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = observer(
@@ -164,15 +202,15 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = obse
       );
 
       return (
-        <View testID="DemoScreen" style={FULL}>
+        <View testID="DemoScreen" style={styles.full}>
           <GradientBackground colors={[color.palette.offWhite, color.palette.offWhite]} />
-          <Screen style={CONTAINER} preset="scroll" backgroundColor={color.transparent}>
+          <Screen style={styles.container} preset="scroll" backgroundColor={color.transparent}>
             <Header
               headerTx="demoScreen.howTo"
               leftIcon="back"
               onLeftPress={goBack}
-              style={HEADER}
-              titleStyle={HEADER_TITLE}
+              style={styles.header}
+              titleStyle={styles.headerTitle}
             />
             {/* <Text style={TITLE} preset="header" tx="demoScreen.title" /> */}
             {/* <Text style={TAGLINE} tx="demoScreen.tagLine" /> */}
@@ -200,8 +238,8 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = obse
 
             <View>
               <Button
-                style={DEMO}
-                textStyle={DEMO_TEXT}
+                style={styles.demo}
+                textStyle={styles.demoText}
                 text = {"Walk Together"}
                 // tx="demoScreen.reactotron"
                 onPress={() => navigation.navigate("beamNow")}
@@ -220,8 +258,8 @@ export const DemoScreen: FC<StackScreenProps<NavigatorParamList, "demo">> = obse
             </View> */}
 
             <Button
-              style={DEMO}
-              textStyle={DEMO_TEXT}
+              style={styles.demo}
+              textStyle={styles.demoText}
               text = {"Users & Live Feed"}
               // tx="demoScreen.demoList"
               onPress={() => navigation.navigate("userList")}
