@@ -11,55 +11,56 @@ import {color, spacing} from "../../theme";
 import {BulletItem, Button, Header, Text, Screen, AutoImage as Image, GradientBackground} from "../../components";
 import {SafeAreaProvider, SafeAreaView} from "react-native-safe-area-context";
 import {palette} from "../../theme/palette";
+import {placeholder} from "i18n-js";
 
-const ROOT: ViewStyle = {
-  backgroundColor: color.palette.black,
-  flex: 1,
-};
+// const ROOT: ViewStyle = {
+//   backgroundColor: color.palette.black,
+//   flex: 1,
+// };
 
-const FULL: ViewStyle = {flex: 1};
+// const FULL: ViewStyle = {flex: 1};
 
-const CONTAINER: ViewStyle = {
-  backgroundColor: color.transparent,
-  // paddingHorizontal: spacing[4],
-};
+// const CONTAINER: ViewStyle = {
+//   backgroundColor: color.transparent,
+//   // paddingHorizontal: spacing[4],
+// };
 
-const HEADER: TextStyle = {
-  paddingBottom: spacing[5] - 1,
-  paddingHorizontal: spacing[4],
-  paddingTop: spacing[3],
-  textAlign: "center",
-  color: color.palette.blue,
-  marginTop: 15,
-};
-const HEADER_TITLE: TextStyle = {
-  fontSize: 12,
-  fontWeight: "bold",
-  letterSpacing: 1.5,
-  lineHeight: 15,
-  textAlign: "center",
-  color: color.palette.black,
-};
+// const HEADER: TextStyle = {
+//   paddingBottom: spacing[5] - 1,
+//   paddingHorizontal: spacing[4],
+//   paddingTop: spacing[3],
+//   textAlign: "center",
+//   color: color.palette.blue,
+//   marginTop: 15,
+// };
+// const HEADER_TITLE: TextStyle = {
+//   fontSize: 12,
+//   fontWeight: "bold",
+//   letterSpacing: 1.5,
+//   lineHeight: 15,
+//   textAlign: "center",
+//   color: color.palette.black,
+// };
 
-const TEXT_INPUT: ViewStyle = {
-  backgroundColor: "transparent",
-  borderColor: color.palette.black,
-  alignItems: "center",
-  alignSelf: "center",
-  paddingBottom: 5,
-  width: 320,
-};
+// const TEXT_INPUT: ViewStyle = {
+//   backgroundColor: "transparent",
+//   borderColor: color.palette.black,
+//   alignItems: "center",
+//   alignSelf: "center",
+//   paddingBottom: 5,
+//   width: 320,
+// };
 
-const TEXT_INPUT_BOX: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-  backgroundColor: color.palette.lighterGrey,
-  borderRadius: 10,
-  borderColor: color.palette.black,
-  width: 320,
-  height: 45,
-  marginBottom: spacing[1],
-};
+// const TEXT_INPUT_BOX: ViewStyle = {
+//   paddingVertical: spacing[4],
+//   paddingHorizontal: spacing[4],
+//   backgroundColor: color.palette.lighterGrey,
+//   borderRadius: 10,
+//   borderColor: color.palette.black,
+//   width: 320,
+//   height: 45,
+//   marginBottom: spacing[1],
+// };
 
 const styles = StyleSheet.create({
   map: {
@@ -71,6 +72,7 @@ const styles = StyleSheet.create({
     width: 320,
     height: 320,
     borderRadius: 10,
+    // ...StyleSheet.absoluteFillObject,
   },
   full: {
     flex: 1,
@@ -99,8 +101,10 @@ const styles = StyleSheet.create({
     borderColor: color.palette.black,
     alignItems: "center",
     alignSelf: "center",
-    paddingBottom: 5,
+    // paddingBottom: 5,
     width: 320,
+    color: palette.white,
+    paddingHorizontal: spacing[4],
   },
   textInputBox: {
     paddingVertical: spacing[4],
@@ -109,7 +113,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: color.palette.black,
     width: 320,
-    height: 45,
     marginBottom: spacing[1],
   },
   title: {
@@ -153,54 +156,55 @@ const styles = StyleSheet.create({
   },
 });
 
-const TITLE: TextStyle = {
-  fontSize: 28,
-  lineHeight: 38,
-  fontWeight: "bold",
-  textAlign: "center",
-  // paddingBottom: 10,
-  // marginVertical: spacing[3],
-  color: color.palette.blue,
-};
+// const TITLE: TextStyle = {
+//   fontSize: 28,
+//   lineHeight: 38,
+//   fontWeight: "bold",
+//   textAlign: "center",
+//   // paddingBottom: 10,
+//   // marginVertical: spacing[3],
+//   color: color.palette.blue,
+// };
 
-const MATCH_BUTTON: ViewStyle = {
-  width: "70%",
-  borderRadius: 10,
-  height: 45,
-  alignItems: "center",
-  justifyContent: "center",
-  // marginTop: 10,
-  marginBottom: 15,
-  // backgroundColor: color.palette.orangeDarker,
-};
+// const MATCH_BUTTON: ViewStyle = {
+//   width: "70%",
+//   borderRadius: 10,
+//   height: 45,
+//   alignItems: "center",
+//   justifyContent: "center",
+//   // marginTop: 10,
+//   marginBottom: 15,
+//   // backgroundColor: color.palette.orangeDarker,
+// };
 
-const BUTTON: ViewStyle = {
-  backgroundColor: "transparent",
-  borderColor: color.palette.black,
-  alignItems: "center",
-  // paddingBottom: 20,
-};
+// const BUTTON: ViewStyle = {
+//   backgroundColor: "transparent",
+//   borderColor: color.palette.black,
+//   alignItems: "center",
+//   // paddingBottom: 20,
+// };
 
-const CONTINUE: ViewStyle = {
-  paddingVertical: spacing[4],
-  paddingHorizontal: spacing[4],
-  backgroundColor: "transparent",
-};
-const CONTINUE_TEXT: TextStyle = {
-  // color: color.palette.black,
-  // fontFamily: typography.primary,
-  fontWeight: "bold",
-  fontSize: 13,
-  letterSpacing: 2,
-  color: color.palette.orangeDarker,
-  textTransform: "uppercase",
-};
+// const CONTINUE: ViewStyle = {
+//   paddingVertical: spacing[4],
+//   paddingHorizontal: spacing[4],
+//   backgroundColor: "transparent",
+// };
+// const CONTINUE_TEXT: TextStyle = {
+//   // color: color.palette.black,
+//   // fontFamily: typography.primary,
+//   fontWeight: "bold",
+//   fontSize: 13,
+//   letterSpacing: 2,
+//   color: color.palette.orangeDarker,
+//   textTransform: "uppercase",
+// };
 
 export const BeamNowScreen: FC<StackScreenProps<NavigatorParamList, "beamNow">> = observer(
     ({navigation}) => {
       const goBack = () => navigation.goBack();
 
-      const [destination, setDestination] = useState("");
+      const [destination, setDestination] = useState("destination");
+      const [time, setTime] = useState("time");
 
       return (
         <View testID="BeamNowScreen" style={styles.full}>
@@ -213,14 +217,15 @@ export const BeamNowScreen: FC<StackScreenProps<NavigatorParamList, "beamNow">> 
             onLeftPress={goBack}
             titleStyle={styles.headerTitle}
           />
-          <Text style={TITLE} preset="header" tx="beamNowScreen.title" />
+          <Text style={styles.title} preset="header" tx="beamNowScreen.title" />
 
           <SafeAreaView style={styles.textInput}>
             <View style={styles.textInputBox}>
               <TextInput
+                style = {styles.textInput}
                 testID="Destination"
                 placeholder= "Destination"
-                placeholderTextColor={palette.black}
+                placeholderTextColor={palette.grey}
                 onChangeText={(destination) => setDestination(destination)}
               />
             </View>
@@ -230,10 +235,11 @@ export const BeamNowScreen: FC<StackScreenProps<NavigatorParamList, "beamNow">> 
           <SafeAreaView style={styles.textInput}>
             <View style={styles.textInputBox}>
               <TextInput
-                testID="DepartureTime"
+                style = {styles.textInput}
+                testID="Time"
                 placeholder= "Departure Time (Optional)"
-                placeholderTextColor={palette.black}
-                onChangeText={(destination) => setDestination(destination)}
+                placeholderTextColor={palette.grey}
+                onChangeText={(time) => setTime(time)}
               />
             </View>
           </SafeAreaView>
@@ -247,6 +253,7 @@ export const BeamNowScreen: FC<StackScreenProps<NavigatorParamList, "beamNow">> 
                 latitudeDelta: 0.02,
                 longitudeDelta: 0.01,
               }}
+              // onRegionChangeComplete={(region) => setRegion(region)}
             />
           </View>
 

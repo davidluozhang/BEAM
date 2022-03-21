@@ -115,7 +115,7 @@ const styles = StyleSheet.create({
     marginBottom: spacing[4],
     alignSelf: "center",
     width: 320,
-    height: 320,
+    height: 450,
     borderRadius: 10,
   },
   full: {
@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 13,
     letterSpacing: 2,
-    color: color.palette.blue,
+    color: color.palette.white, // used to be blue
   },
   header: {
     paddingTop: spacing[3],
